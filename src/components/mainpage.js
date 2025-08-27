@@ -42,23 +42,26 @@ export const MainPage = () => {
         <Container fluid className="p-0 m-0 overflow-hidden" >
             <section id="home" className="min-vh-100 d-flex flex-column justify-content-center align-items-center base-background"
              style={{
-                backgroundImage: `url('images/luca-bravo-9l_326FISzk-unsplash.jpg')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                minHeight: '100vh',
-                color: 'white',
-                padding: '20px' 
-         }}>
+               backgroundImage: `
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/luca-bravo-9l_326FISzk-unsplash.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  minHeight: '100vh',
+                  color: 'white',
+                  padding: '20px'
+              }}
+            >
                   <Row className='d-flex flex-column justify-content-center align-items-center'>
                     <Col className="text-white ">
                       <h1 className="text-center" style={{fontSize: '50px'}}>Hello, I am <span className='purple'>Okpe Nnenna</span></h1>
-                      <p className="text-center mb-0" style={{fontSize: '20px'}}>I am a front-end developer and I
+                      <p className="mb-0" style={{fontSize: '20px'}}>I am a front-end developer and I
                          specialize in writing clean, well-structured code </p>
                           <p className="text-center mt-0" style={{fontSize: '20px'}}>I also enhance user experience by adding smooth, 
                             engaging animations that bring websites to life. </p>
                     </Col>
                     <Col>
-                      <Button className='purple'>Hire Me</Button>
+                      <Button className='highlight'>Hire Me</Button>
                     </Col>
                   </Row>
                   </section>
@@ -69,7 +72,7 @@ export const MainPage = () => {
                  <p>I am a web developer with a zeal to provide quality service using the latest adequte tools. 
                     I thrive in collaborations, need understanding, finding, learning, and applying the best possible solution
                  </p>
-                 <Button>Download CV</Button>
+                 <Button className='highlight'>Download CV</Button>
                 </Col>
                 <Col  xs={11} md={6}>
                  <div className=" p-4" style={{ maxWidth: '400px' }}>
@@ -106,7 +109,7 @@ export const MainPage = () => {
     width: '100%',
     height: 'auto',
     objectFit: 'cover'}} />
-                <Card.Body style={{backgroundColor: 'rgb(12, 6, 24)'}}>
+                <Card.Body style={{backgroundColor: '#0D1117'}}>
                     <Card.Title>{project.title}</Card.Title>
                     <Card.Text>{project.description}</Card.Text>
                     <Card.Text>
@@ -114,7 +117,7 @@ export const MainPage = () => {
                     </Card.Text>
                         <div className="d-flex justify-content-start">
                           <Button
-                                    variant="outline-primary"
+                                  
                                     href={project.code}
                                     className="me-2 highlight"
                                     target="_blank"
@@ -123,7 +126,7 @@ export const MainPage = () => {
                                     View Code
                             </Button>
                             <Button
-                                    variant="primary"
+                                   className="full-button"
                                     href={project.website}
                           target="_blank"
                                     rel="noopener noreferrer"
@@ -158,7 +161,7 @@ export const MainPage = () => {
                             <label htmlFor="message" className="form-label">Message</label>
                             <textarea className="form-control dull-background" id="message" rows="3"></textarea>
                         </div>
-                        <Button type="submit">Send Message</Button>
+                        <Button type="submit" className='highlight'>Send Message</Button>
                     </form>
                 </Col>
                 <Col md={8}>

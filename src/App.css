@@ -1,3 +1,11 @@
+:root {
+  --background-main: #0D1117;
+  --background-secondary: #f8ecec; /* dark gray */  
+  --text: #E6EDF3;
+  --accent: linear-gradient(270deg, #7b2ff7, #e100ff);
+ /* purple */
+}
+
 section {
   margin: 0 !important;
   padding: 0 !important;
@@ -15,7 +23,7 @@ big-header{
   border-right: 1px solid #ddd;
 }
 .purple {
-  background: linear-gradient(270deg, #a91085, #7b2ff7, #e100ff);
+  background: var(--accent);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,14 +45,11 @@ big-header{
 
 
 .base-background{
-  background: linear-gradient(135deg, rgb(12, 6, 24), rgb(20, 5, 30), rgb(10, 15, 25));
+  background: var(--background-main);
 
 }
 .dull-background{
-    background: linear-gradient(135deg, rgb(183, 203, 223), rgb(235, 240, 245), rgb(210, 215, 225))
-
-
-;
+    background-color: var(--background-secondary);
 }
 
 .social-icons .social-icon {
@@ -63,17 +68,31 @@ big-header{
 }
 
 .social-icons .social-icon:hover {
-  background-color: #f8c133;
+  background: var(--accent);
   color: #000;
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.highlight{
+  background: var(--accent);
+  color: white;
+  border: black;
 }
 .highlight:hover,
 .highlight:focus,
 .highlight.active {
   border: 2px solid purple;
   transition: border 0.3s ease;
-  background-color: red;
+  background-color: purple;
 }
 
-
+.full-button,
+.full-button:hover{
+  background-color: var(--background-secondary);
+  color: #000000;
+}
+.full-button:hover{
+  border: 2px solid;
+  transition: border 0.3s ease;
+}
