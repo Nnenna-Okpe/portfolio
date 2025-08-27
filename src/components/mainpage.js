@@ -12,22 +12,22 @@ export const MainPage = () => {
   { name: "Graphics design", level: 90 },
 ];
     const projects = [
-        { image: "images/1000195671.jpg", title: "Project 1", 
-            code: "#", website: "#",
+        { image: "images/1000195671.jpg", title: "Consultation Page", 
+            code: "https://github.com/Nnenna-Okpe/demo-page", website: "https://demo-page-rho.vercel.app/",
             tools: "React, Bootstrap",
-          description: "Description of project 1" },
-         { image: "images/1000195672.jpg", title: "Project 2", 
-            code: "#", website: "#",
+          description: "Created a website for a makeup studio. It includes their employees, story, past works, contact and consultation which is sent to their email " },
+         { image: "images/1000195672.jpg", title: "QR Code Menu", 
+            code: "https://github.com/Nnenna-Okpe/qrcode-online-menu", website: "https://qrcode-online-menu.vercel.app/",
+            tools: "React, Google Sheets, Bootstrap",
+          description: "A menu website which also includes a page for catering services provided. It comes connected through API at the admin page to google sheets for storing of data and a final touch of a QR code" },
+        { image: "images/1000195675.jpg", title: "Professional Portfolio", 
+            code: "#", website: "https://okpechiamaka.com/",
             tools: "React, Bootstrap",
-          description: "Description of project 2" },
-        { image: "images/1000195675.jpg", title: "Project 3", 
-            code: "#", website: "#",
-            tools: "React, Bootstrap",
-          description: "Description of project 3" },
-           { image: "images/egor-vikhrev-dY8TvpNz72o-unsplash.jpg", title: "Project 1", 
-            code: "#", website: "#",
-            tools: "React, Bootstrap",
-          description: "Description of project 1" },
+          description: "A portfolio page for a data engineer. Comes with a contact page connected to the receipent's email and an admin page for info updates " },
+           { image: "images/egor-vikhrev-dY8TvpNz72o-unsplash.jpg", title: "Online Music Player", 
+            code: "https://github.com/Nnenna-Okpe/react-api-music-app", website: "#",
+            tools: "React, API, Bootstrap",
+          description: "A music player connected with API to deezer for a seamless streaming of music with a download function." },
          { image: "images/sufyan-XFXe2caPMfE-unsplash.jpg", title: "Project 2", 
             code: "#", website: "#",
             tools: "React, Bootstrap",
@@ -53,11 +53,11 @@ export const MainPage = () => {
               }}
             >
                   <Row className='d-flex flex-column justify-content-center align-items-center'>
-                    <Col className="text-white ">
+                    <Col className="text-white xs={11} md={8} lg={6} ms-4">
                       <h1 className="text-center" style={{fontSize: '50px'}}>Hello, I am <span className='purple'>Okpe Nnenna</span></h1>
                       <p className="mb-0" style={{fontSize: '20px'}}>I am a front-end developer and I
                          specialize in writing clean, well-structured code </p>
-                          <p className="text-center mt-0" style={{fontSize: '20px'}}>I also enhance user experience by adding smooth, 
+                          <p className="mt-0" style={{fontSize: '20px'}}>I also enhance user experience by adding smooth, 
                             engaging animations that bring websites to life. </p>
                     </Col>
                     <Col>
@@ -103,14 +103,14 @@ export const MainPage = () => {
                 <h1 className="text-white mt-5 text-center mb-3 purple display-5">My Projects</h1>
                
     {projects.map((project, index) => (
-         <Col key={index} md={4} className="mb-4 p-2" >
+         <Col key={index} md={4} xs={6} className="mb-4 p-2" >
             <Card className="shadow-sm bg-dark text-white" >
                 <Card.Img variant="top" src={project.image} alt={project.title} style={{maxHeight: '300px',
     width: '100%',
     height: 'auto',
     objectFit: 'cover'}} />
                 <Card.Body style={{backgroundColor: '#0D1117'}}>
-                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Title style={{fontSize: '25px'}}>{project.title}</Card.Title>
                     <Card.Text>{project.description}</Card.Text>
                     <Card.Text>
                         <strong>Tools:</strong> {project.tools}
@@ -118,20 +118,20 @@ export const MainPage = () => {
                         <div className="d-flex justify-content-start">
                           <Button
                                   
-                                    href={project.code}
+                                    href={project.website}
                                     className="me-2 highlight"
                                     target="_blank"
                                     rel="noopener noreferrer"
                             >
-                                    View Code
+                                    Website
                             </Button>
                             <Button
                                    className="full-button"
-                                    href={project.website}
+                                    href={project.code}
                           target="_blank"
                                     rel="noopener noreferrer"
                             >
-                                    View Website
+                                    View Code
                             </Button>
                         </div>
                 </Card.Body>
@@ -166,17 +166,17 @@ export const MainPage = () => {
                 </Col>
                 <Col md={8}>
                 <div className="d-flex gap-3 justify-content-center social-icons">
-                  <a href="#" className="social-icon">
-                    <i className="fab fa-instagram"></i>
+                  <a href="https://www.linkedin.com/in/okpe-nnenna-1b1213260/" className="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="#" className="social-icon">
-                    <i className="fab fa-facebook-f"></i>
+                  <a href="https://github.com/Nnenna-Okpe" className="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
                   </a>
-                  <a href="#" className="social-icon">
+                  <a href="https://www.tiktok.com/@nenztech?_t=ZM-8tAniAtiM9l&_r=1" className="social-icon" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-tiktok"></i>
                   </a>
-                  <a href="#" className="social-icon">
-                    <i className="fab fa-pinterest-p"></i>
+                  <a href="#" className="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-whatsapp"></i>
                   </a>
 </div>
 
