@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Spinner, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const MainPage = () => {
@@ -24,19 +24,59 @@ export const MainPage = () => {
             code: "#", website: "https://okpechiamaka.com/",
             tools: "React, Bootstrap",
           description: "A portfolio page for a data engineer. Comes with a contact page connected to the receipent's email and an admin page for info updates " },
-           { image: "images/egor-vikhrev-dY8TvpNz72o-unsplash.jpg", title: "Online Music Player", 
-            code: "https://github.com/Nnenna-Okpe/react-api-music-app", website: "#",
+           { image: "images/music.jpg", title: "Online Music Player", 
+            code: "https://github.com/Nnenna-Okpe/react-api-music-app", website: "https://api-music-player.web.app/",
             tools: "React, API, Bootstrap",
           description: "A music player connected with API to deezer for a seamless streaming of music with a download function." },
-         { image: "images/sufyan-XFXe2caPMfE-unsplash.jpg", title: "Project 2", 
-            code: "#", website: "#",
-            tools: "React, Bootstrap",
-          description: "Description of project 2" },
-        { image: "images/egor-vikhrev-dY8TvpNz72o-unsplash.jpg", title: "Project 3", 
-            code: "#", website: "#",
-            tools: "React, Bootstrap",
-          description: "Description of project 3" },
+       
     ];
+
+ 
+  const [loading, setLoading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMsg(null);
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const toEmail = "okpennenna8@gmail.com";
+    const subject = `Message from ${name} (${email})`;
+    const mailtoLink = `mailto:${encodeURIComponent(toEmail)}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(message)}`;
+
+    // Show success message
+    setStatusMsg(
+  <Alert
+    variant="success"
+    className="mt-3"
+    dismissible
+    onClose={() => setStatusMsg(null)}
+  >
+    <p>Thank you for your message!</p>
+    <p>
+      If your email client doesn’t open automatically, you can send a message through whatsapp instead.
+    </p>
+  </Alert>
+);
+
+
+    // Reset button after short delay
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    // Open mailto link
+    window.location.href = mailtoLink;
+
+    // Reset form fields
+    e.target.reset();
+  };
 
     return (
         <Container fluid className="p-0 m-0 overflow-hidden" >
@@ -61,7 +101,7 @@ export const MainPage = () => {
                             engaging animations that bring websites to life. </p>
                     </Col>
                     <Col>
-                      <Button className='highlight'>Hire Me</Button>
+                      <Button className='highlight' href='https://wa.me/2349121361644' target="_blank" rel="noopener noreferrer">Hire Me</Button>
                     </Col>
                   </Row>
                   </section>
@@ -148,21 +188,48 @@ export const MainPage = () => {
                 <Col md={8} className="mt-5">
                     <h1 className="text-center purple mt-5 display-5">Contact Me</h1>
                     <p className="text-center">Feel free to reach out to me for any inquiries or collaborations.</p>
-                    <form>
-                        <div className="mb-3">
-                            <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control dull-background" id="name" />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" className="form-control dull-background" id="email" />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="message" className="form-label">Message</label>
-                            <textarea className="form-control dull-background" id="message" rows="3"></textarea>
-                        </div>
-                        <Button type="submit" className='highlight'>Send Message</Button>
-                    </form>
+                      <form id="contactForm" onSubmit={handleSubmit}>
+                       <div className="mb-3">
+                         <label htmlFor="name" className="form-label">Name</label>
+                         <input 
+                           type="text" 
+                           className="form-control dull-background" 
+                           id="name" 
+                           required 
+                         />
+                       </div>
+
+                       <div className="mb-3">
+                         <label htmlFor="email" className="form-label">Email</label>
+                         <input 
+                           type="email" 
+                           className="form-control dull-background" 
+                           id="email" 
+                           required 
+                         />
+                       </div>
+
+                       <div className="mb-3">
+                         <label htmlFor="message" className="form-label">Message</label>
+                         <textarea 
+                           className="form-control dull-background" 
+                           id="message" 
+                           rows="3"
+                           required 
+                         ></textarea>
+                       </div>
+
+                      <Button type="submit" id="submitBtn" className="highlight" disabled={loading}>
+                       {loading ? (
+                           <>
+                        <Spinner animation="border" size="sm" /> Sending...
+                          </>
+                          ) : (
+                           "Send Message"
+                       )}
+                          </Button>
+                      </form>
+                         
                 </Col>
                 <Col md={8}>
                 <div className="d-flex gap-3 justify-content-center social-icons">
@@ -175,13 +242,15 @@ export const MainPage = () => {
                   <a href="https://www.tiktok.com/@nenztech?_t=ZM-8tAniAtiM9l&_r=1" className="social-icon" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-tiktok"></i>
                   </a>
-                  <a href="#" className="social-icon" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/2349121361644" className="social-icon" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-whatsapp"></i>
                   </a>
 </div>
 
                 </Col>
             </Row>
+                <div id="formStatus">{statusMsg}</div>
+
         </section>
         </Container>
     );
