@@ -107,14 +107,14 @@ export const MainPage = () => {
                   </section>
         <section id="about" className='dull-background'>
             <Row className="text-dark p-4">
-                <Col className='d-flex flex-column justify-content-center align-items-center p-4' xs={11} md={6}>
+                <Col className='d-flex flex-column justify-content-center align-items-center p-4' xs={12} md={6}>
                  <h1 className="text-center purple display-5" >About Me</h1>
                  <p>I am a web developer with a zeal to provide quality service using the latest adequte tools. 
                     I thrive in collaborations, need understanding, finding, learning, and applying the best possible solution
                  </p>
                  <Button className='highlight'>Download CV</Button>
                 </Col>
-                <Col  xs={11} md={6}>
+                <Col  xs={12} md={6}>
                  <div className=" p-4" style={{ maxWidth: '400px' }}>
                   {skills.map(({ name, level }) => (
                     <div key={name} className="mb-4">
@@ -143,7 +143,7 @@ export const MainPage = () => {
                 <h1 className="text-white mt-5 text-center mb-3 purple display-5">My Projects</h1>
                
     {projects.map((project, index) => (
-         <Col key={index} md={4} xs={6} className="mb-4 p-2" >
+         <Col key={index} md={4} xs={11} className="mb-4 p-2" >
             <Card className="shadow-sm bg-dark text-white" >
                 <Card.Img variant="top" src={project.image} alt={project.title} style={{maxHeight: '300px',
     width: '100%',
@@ -186,7 +186,7 @@ export const MainPage = () => {
         <section id="contact" className='base-background '>
             <Row className='d-flex flex-column justify-content-center align-items-center p-4 text-white'>
                 <Col md={8} className="mt-5">
-                    <h1 className="text-center purple mt-5 display-5">Contact Me</h1>
+                    <h1 className="text-center purple mt-5 display-3">Contact Me</h1>
                     <p className="text-center">Feel free to reach out to me for any inquiries or collaborations.</p>
                       <form id="contactForm" onSubmit={handleSubmit}>
                        <div className="mb-3">
