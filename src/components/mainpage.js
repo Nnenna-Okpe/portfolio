@@ -139,7 +139,7 @@ export const MainPage = () => {
             </Row>
         </section>
         <section id="projects" className='dull-background'>
-            <Row className='p-3 '>
+            <Row className='p-3 d-flex justify-content-center align-items-center'> 
                 <h1 className="text-white mt-5 text-center mb-3 purple display-5">My Projects</h1>
                
     {projects.map((project, index) => (
@@ -186,7 +186,7 @@ export const MainPage = () => {
         <section id="contact" className='base-background '>
             <Row className='d-flex flex-column justify-content-center align-items-center p-4 text-white'>
                 <Col md={8} className="mt-5">
-                    <h1 className="text-center purple mt-5 display-3">Contact Me</h1>
+                    <h1 className="text-center purple mt-1 display-3">Contact Me</h1>
                     <p className="text-center">Feel free to reach out to me for any inquiries or collaborations.</p>
                       <form id="contactForm" onSubmit={handleSubmit}>
                        <div className="mb-3">
@@ -232,7 +232,7 @@ export const MainPage = () => {
                          
                 </Col>
                 <Col md={8}>
-                <div className="d-flex gap-3 justify-content-center social-icons">
+                <div className="d-flex gap-3 justify-content-center social-icons mt-3">
                   <a href="https://www.linkedin.com/in/okpe-nnenna-1b1213260/" className="social-icon" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin"></i>
                   </a>
