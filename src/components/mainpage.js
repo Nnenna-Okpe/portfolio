@@ -1,8 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Button, Card, Spinner, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Typed from "typed.js";
 
 export const MainPage = () => {
+const typedRef = useRef(null);
+
+  useEffect(() => {
+    // Initialize Typed.js
+    const typed = new Typed(typedRef.current, {
+      strings: ["Front-End Developer", "Legal-Tech Enthusiast", "React Developer"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true,
+    });
+
+    // Cleanup to prevent multiple instances
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+
     const skills = [
   { name: "React", level: 85 },
   { name: "Bootstrap", level: 95 },
@@ -80,30 +99,70 @@ export const MainPage = () => {
 
     return (
         <Container fluid className="p-0 m-0 overflow-hidden" >
-            <section id="home" className="min-vh-100 d-flex flex-column justify-content-center align-items-center base-background"
-             style={{
-               backgroundImage: `
-                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('images/luca-bravo-9l_326FISzk-unsplash.jpg')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  minHeight: '100vh',
-                  color: 'white',
-                  padding: '20px'
-              }}
-            >
-                  <Row className='d-flex flex-column justify-content-center align-items-center'>
-                    <Col className="text-white xs={11} md={8} lg={6} ms-4">
-                      <h1 className="text-center" style={{fontSize: '50px'}}>Hello, I am <span className='purple'>Okpe Nnenna</span></h1>
-                      <p className="mb-0"   style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}>
-                           I write clean, well-structured code and enhance user experience with
-        smooth, engaging animations that bring websites to life.</p>
-                    </Col>
-                    <Col>
-                      <Button className='highlight' href='https://wa.me/2349121361644' target="_blank" rel="noopener noreferrer">Hire Me</Button>
-                    </Col>
-                  </Row>
-                  </section>
+           <section
+  id="home"
+  className="min-vh-100 d-flex flex-column justify-content-center align-items-center base-background text-center text-md-start"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('images/luca-bravo-9l_326FISzk-unsplash.jpg')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+    color: "white",
+    padding: "20px",
+  }}
+>
+  <Row className="d-flex flex-column justify-content-center align-items-center">
+    <Col xs={12} md={8} lg={8}>
+      {/* Main Heading */}
+      <h1
+        className="fw-bold mb-3 animate__animated animate__fadeInDown"
+        style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+      >
+        Hello, I am{" "}
+        <span className="purple">
+          Okpe Nnenna
+        </span>
+      </h1>
+
+      {/* Typing Effect for Role */}
+      <h2
+        className="mb-3 animate__animated animate__fadeIn animate__delay-1s"
+        style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)", fontWeight: "300" }}
+      >
+        <span ref={typedRef}></span>
+      </h2>
+
+      {/* Paragraphs */}
+      <p
+        className="animate__animated animate__fadeInUp animate__delay-2s"
+        style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}
+      >
+        I write clean, well-structured code and enhance user experience with
+        smooth, engaging animations that bring websites to life.
+      </p>
+
+      {/* Call-to-Action Button */}
+      <Button
+        className="highlight mt-3 px-4 py-2 animate__animated animate__zoomIn animate__delay-3s"
+        href="https://wa.me/2349121361644"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          fontSize: "1.2rem",
+          borderRadius: "50px",
+          transition: "all 0.3s ease",
+        }}
+        onMouseOver={(e) => (e.target.style.transform = "scale(1.1)")}
+        onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
+      >
+        Hire Me
+      </Button>
+    </Col>
+  </Row>
+</section>
+
         <section id="about" className='dull-background'>
             <Row className="text-dark p-4">
                 <Col className='d-flex flex-column justify-content-center align-items-center p-4' xs={12} md={6}>
