@@ -65,7 +65,7 @@ export const MainPage = () => {
       image: "images/1000195672.jpg",
       title: "QR Code Menu",
       code: "https://github.com/Nnenna-Okpe/qrcode-online-menu",
-      website: "https://qrcode-online-menu.vercel.app/",
+      website: "https://qrcode-online-menu.onrender.com",
       tools: "React, Google Sheets, Bootstrap",
       description:
         "A menu website which also includes a page for catering services provided. It comes connected through API at the admin page to google sheets for storing of data and a final touch of a QR code",
