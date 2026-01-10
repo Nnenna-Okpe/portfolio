@@ -56,7 +56,7 @@ export const MainPage = () => {
       image: "images/1000195671.jpg",
       title: "Consultation Page",
       code: "https://github.com/Nnenna-Okpe/demo-page",
-      website: "https://demo-page-rho.vercel.app/",
+      website: "https://make-up-consultation.onrender.com/",
       tools: "React, Tailwindcss",
       description:
         "Created a website for a makeup studio. It includes their employees, story, past works, contact and consultation which is sent to their email ",
