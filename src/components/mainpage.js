@@ -47,7 +47,7 @@ export const MainPage = () => {
       image: "images/commerce-cover.png",
       title: "E-commerce Website",
       code: "https://github.com/Nnenna-Okpe/commercial-website",
-      website: "https://commercial-website-tau.vercel.app/",
+      website: "https://commercial-website-cxkv.onrender.com/",
       tools: "React-Vite, Tailwindcss, luicide-Icons",
       description:
         "An e-commerce website with a product page, cart functionality, and checkout process. Features smooth animations and responsive design for an engaging user experience.",
