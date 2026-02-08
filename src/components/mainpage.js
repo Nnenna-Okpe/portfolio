@@ -105,9 +105,9 @@ export const MainPage = () => {
     const toEmail = "okpennenna8@gmail.com";
     const subject = `Message from ${name} (${email})`;
     const mailtoLink = `mailto:${encodeURIComponent(
-      toEmail
+      toEmail,
     )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      message
+      message,
     )}`;
 
     // Show success message
@@ -123,7 +123,7 @@ export const MainPage = () => {
           If your email client doesn’t open automatically, you can send a
           message through whatsapp instead.
         </p>
-      </Alert>
+      </Alert>,
     );
 
     // Reset button after short delay
@@ -306,7 +306,7 @@ export const MainPage = () => {
           </h1>
 
           {projects.map((project, index) => (
-            <Col key={index} md={4} xs={11} className="mb-4 p-2">
+            <Col key={index} lg={4} md={6} xs={11} className="mb-auto p-2">
               <Card className="shadow-sm bg-dark text-white">
                 <Card.Img
                   variant="top"
