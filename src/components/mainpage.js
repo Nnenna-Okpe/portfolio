@@ -62,7 +62,7 @@ export const MainPage = () => {
         "Created a website for a makeup studio. It includes their employees, story, past works, contact and consultation which is sent to their email ",
     },
     {
-      image: "images/1772095023186.jpg",
+      image: "images/1772096730695.jpg",
       title: "Valentine's Day Website templates",
       code: "https://github.com/Nnenna-Okpe/valentine-love",
       website: "https://valentine-love.onrender.com/",
