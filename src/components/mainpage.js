@@ -62,6 +62,15 @@ export const MainPage = () => {
         "Created a website for a makeup studio. It includes their employees, story, past works, contact and consultation which is sent to their email ",
     },
     {
+      image: "images/1772095023186.jpg",
+      title: "Valentine's Day Website templates",
+      code: "https://github.com/Nnenna-Okpe/valentine-love",
+      website: "https://valentine-love.onrender.com/",
+      tools: "React, Tailwindcss, React-router-dom",
+      description:
+        "A selection of over 14 different templates for lovers to choose from for a special website to send to their loved one.",
+    },
+    {
       image: "images/1000195672.jpg",
       title: "QR Code Menu",
       code: "https://github.com/Nnenna-Okpe/qrcode-online-menu",
